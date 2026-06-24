@@ -1,34 +1,34 @@
-import { Microscope, Cpu, BrainCircuit, Network } from 'lucide-react';
+import { Microscope, Atom, FlaskConical, Layers } from 'lucide-react';
 
 const Research = () => {
   const areas = [
     {
-      icon: <BrainCircuit size={28} />,
-      title: 'Computational Neuroscience',
-      desc: 'Understanding how neural circuits process information and using these insights to design new computational models.',
+      icon: <Atom size={28} />,
+      title: 'Silicate & Zeolite Chemistry',
+      desc: 'Exploring how silicates and zeolites form, transform, and select phases under different chemical and thermodynamic conditions.',
       color: 'emerald',
     },
     {
-      icon: <Network size={28} />,
-      title: 'Deep Learning Theory',
-      desc: 'Investigating the mathematical foundations of deep neural networks — generalization, optimization, and expressivity.',
+      icon: <Layers size={28} />,
+      title: 'Phase Selection & Crystallization',
+      desc: 'Investigating nucleation pathways, framework competition, and crystallization kinetics in HSIL-based synthesis systems.',
       color: 'blue',
     },
     {
-      icon: <Cpu size={28} />,
-      title: 'Brain-Computer Interfaces',
-      desc: 'Developing ML algorithms that decode neural signals for assistive technology and prosthetic control.',
+      icon: <FlaskConical size={28} />,
+      title: 'Hydrated Silicate Ionic Liquids (HSILs)',
+      desc: 'Studying the structure, reactivity, and ion–silicate interactions in HSILs to understand their role in directing zeolite frameworks.',
       color: 'purple',
     },
     {
       icon: <Microscope size={28} />,
-      title: 'Neural Data Analysis',
-      desc: 'Building scalable statistical methods for analyzing large-scale neural recordings (fMRI, EEG, spike trains).',
+      title: 'Advanced Characterization',
+      desc: 'Using in situ SAXS–WAXS, and ex situ PXRD, SEM, ICP‑OES, AAS, and TGA/DSC to decode material evolution across multiple length scales.',
       color: 'amber',
     },
   ];
 
-  const colorMap: Record<string, { bg: string; text: string; border: string; hoverBg: string }> = {
+  const colorMap = {
     emerald: { bg: 'bg-emerald-50', text: 'text-emerald-700', border: 'border-emerald-200', hoverBg: 'hover:bg-emerald-100' },
     blue: { bg: 'bg-blue-50', text: 'text-blue-700', border: 'border-blue-200', hoverBg: 'hover:bg-blue-100' },
     purple: { bg: 'bg-purple-50', text: 'text-purple-700', border: 'border-purple-200', hoverBg: 'hover:bg-purple-100' },
@@ -39,17 +39,25 @@ const Research = () => {
     <section id="research" className="py-24 bg-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+
           {/* Left: Description */}
           <div>
             <span className="text-emerald-700 font-semibold text-sm tracking-widest uppercase">Research</span>
+
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-3 mb-6 leading-tight">
-              Bridging the gap between <span className="text-emerald-700">brains</span> and <span className="text-emerald-700">machines</span>
+              Understanding how{' '}
+              <span className="text-emerald-700">materials grow</span> and{' '}
+              <span className="text-emerald-700">structures emerge</span>
             </h2>
+
             <p className="text-gray-600 text-lg leading-relaxed mb-8">
-              My research sits at the exciting intersection of artificial intelligence and neuroscience. 
-              I believe that by understanding how the brain computes, we can build more efficient, interpretable, 
-              and robust AI systems. My work combines mathematical theory with real neural data to develop 
-              next-generation computational models.
+              My research focuses on the chemistry and physics of silicates, porous materials, 
+              and zeolites. I study how ions, structure-directing species, and thermodynamic 
+              conditions influence phase selection and crystallization. Much of my work involves 
+              Hydrated Silicate Ionic Liquids (HSILs), where I investigate how subtle changes in 
+              composition lead to entirely different framework outcomes. I combine in situ 
+              synchrotron techniques with ex situ characterization to build a mechanistic 
+              understanding of how materials evolve from solution to solid.
             </p>
 
             <div className="relative rounded-2xl overflow-hidden group">
@@ -61,7 +69,9 @@ const Research = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-6">
                 <div>
                   <p className="text-white font-bold text-lg">Current Project</p>
-                  <p className="text-white/70 text-sm">Neural Manifold Learning for Brain-Computer Interfaces</p>
+                  <p className="text-white/70 text-sm">
+                    In situ SAXS–WAXS tracking of zeolite crystallization in HSIL systems
+                  </p>
                 </div>
               </div>
             </div>
@@ -87,6 +97,7 @@ const Research = () => {
               );
             })}
           </div>
+
         </div>
       </div>
     </section>

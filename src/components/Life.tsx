@@ -5,42 +5,42 @@ const Life = () => {
     {
       icon: <Dumbbell size={24} />,
       title: 'Fitness & Strength Training',
-      desc: "I've been lifting consistently for the past few months, and it has taught me discipline, structure, and the power of progressive overload — lessons that translate beautifully into research and everyday life.",
+      desc: "I've been lifting consistently for the past few months, and it has taught me discipline, structure, and the power of progressive overload, lessons that translate beautifully into research and everyday life.",
       color: 'text-rose-600',
       bg: 'bg-rose-50',
     },
     {
       icon: <Plane size={24} />,
       title: 'Travel & Exploration',
-      desc: 'From Austria and the Netherlands to Spain, France, China, and Germany — traveling recharges my creativity. With 10+ countries explored, every trip brings a fresh perspective and a deeper appreciation for the world.',
+      desc: 'From Austria and the Netherlands to Spain, France, China, and Germany, traveling recharges my creativity. With 10+ countries explored, every trip brings a fresh perspective and a deeper appreciation for the world.',
       color: 'text-blue-600',
       bg: 'bg-blue-50',
     },
     {
       icon: <Mountain size={24} />,
       title: 'Hiking & Outdoors',
-      desc: 'Nothing beats the clarity that comes from a sunrise hike. Forest trails, snowy mountains, coastal paths — being outdoors helps me disconnect, reset, and return with a clearer mind.',
+      desc: 'Nothing beats the clarity that comes from a sunrise hike. Forest trails, snowy mountains, coastal paths, being outdoors helps me disconnect, reset, and return with a clearer mind.',
       color: 'text-emerald-600',
       bg: 'bg-emerald-50',
     },
     {
       icon: <BookOpen size={24} />,
       title: 'Reading & Storytelling',
-      desc: 'Whether it’s zeolite papers, science writing, or sci‑fi stories, I love exploring ideas that expand my thinking. Movies and series are another favorite way to unwind — especially anything with strong world‑building or deep storytelling.',
+      desc: 'Whether it’s zeolite papers, science writing, or sci‑fi stories, I love exploring ideas that expand my thinking. Movies and series are another favorite way to unwind, especially anything with strong world‑building or deep storytelling.',
       color: 'text-purple-600',
       bg: 'bg-purple-50',
     },
     {
       icon: <Coffee size={24} />,
       title: 'Coffee & Cooking',
-      desc: 'A good pour‑over is non‑negotiable. I enjoy experimenting with recipes from the places I visit — my Thai green curry is getting dangerously close to restaurant quality.',
+      desc: 'A good pour‑over is non‑negotiable. I enjoy experimenting with recipes from the places I visit, my Butter chicken is getting dangerously close to restaurant quality.',
       color: 'text-amber-700',
       bg: 'bg-amber-50',
     },
     {
       icon: <Music size={24} />,
       title: 'Music',
-      desc: 'Lo‑fi for focus, jazz for thinking, and indie rock for the gym — music sets the rhythm for every part of my day and keeps me grounded.',
+      desc: 'Lo‑fi for focus, jazz for thinking, and indie rock for the gym, music sets the rhythm for every part of my day and keeps me grounded.',
       color: 'text-pink-600',
       bg: 'bg-pink-50',
     },
@@ -77,7 +77,7 @@ const Life = () => {
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-6">
               <div>
                 <p className="text-white font-bold text-xl">🏋️ Morning Gym Routine</p>
-                <p className="text-white/70 text-sm">Strength training at 6 AM — the best way to start the day</p>
+                <p className="text-white/70 text-sm">Strength training, the best way to end the day</p>
               </div>
             </div>
           </div>
@@ -119,9 +119,9 @@ const Life = () => {
         {/* Quote */}
         <div className="mt-16 text-center">
           <blockquote className="text-2xl md:text-3xl font-serif italic text-gray-400 max-w-3xl mx-auto leading-relaxed">
-            "The mind that opens to a new idea never returns to its original size."
+            "You must be the change you wish to see in the world.
           </blockquote>
-          <p className="text-gray-400 mt-4 text-sm font-medium">— Albert Einstein</p>
+          <p className="text-gray-400 mt-4 text-sm font-medium">— Mahatma Gandhi</p>
         </div>
       </div>
     </section>

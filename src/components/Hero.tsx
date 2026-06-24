@@ -60,15 +60,11 @@ const Hero = () => {
 
             {/* Short Intro */}
             <p className="text-lg md:text-xl text-white/70 mb-6 max-w-xl leading-relaxed">
-              A dedicated researcher with a strong foundation in{' '}
-              <span className="text-emerald-400 font-semibold">materials science</span> and{' '}
-              <span className="text-emerald-400 font-semibold">engineering physics</span>, 
-              complemented by pre‑doctoral experience in bioscience engineering. My work focuses on 
-              silicates, porous materials, and zeolites, supported by hands‑on expertise in advanced 
-              analytical and characterization techniques including in situ synchrotron SAXS‑WAXS and 
-              ex‑situ PXRD, SEM, ICP‑OES, AAS, and TGA/DSC. With a multidisciplinary background 
-              bridging physics, chemistry, and materials science, I aim to contribute meaningfully 
-              to both academia and industry.
+              A {' '}
+              <span className="text-emerald-400 font-semibold">materials scientist</span> and{' '}
+              <span className="text-emerald-400 font-semibold">engineering physicist</span>, 
+              fascinated by silicates, zeolites, and the strange ways crystals choose their paths,
+               and always chasing the next phase diagram, SAXS curve, or good hike.
             </p>
 
             {/* Buttons */}

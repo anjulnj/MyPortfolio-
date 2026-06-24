@@ -1,111 +1,296 @@
-import { GraduationCap, Brain, Target, Award } from 'lucide-react';
+import { GraduationCap, Brain, Target, Award, Sparkles, MapPin, ArrowRight } from 'lucide-react';
 
 const About = () => {
   const highlights = [
     {
-      icon: <GraduationCap className="text-emerald-600" size={24} />,
+      icon: <GraduationCap size={22} />,
+      color: 'emerald',
       title: 'Education',
-      detail: 'PhD in Computer Science',
-      sub: 'Stanford University, 2022–Present',
+      detail: 'PhD in Bioscience Engineering',
+      sub: 'KU Leuven • 2025 – Present',
     },
     {
-      icon: <Brain className="text-blue-600" size={24} />,
+      icon: <Brain size={22} />,
+      color: 'blue',
       title: 'Research Focus',
-      detail: 'ML & Neuroscience',
-      sub: 'Deep learning, Neural decoding',
+      detail: 'Silicates, Zeolites & Crystallization',
+      sub: 'HSILs • Phase Selection • Porous Materials',
     },
     {
-      icon: <Award className="text-amber-600" size={24} />,
-      title: 'Awards',
-      detail: 'NSF Graduate Fellow',
-      sub: 'Best Paper Award, NeurIPS 2024',
+      icon: <Award size={22} />,
+      color: 'amber',
+      title: 'Expertise',
+      detail: 'Advanced Characterization',
+      sub: 'SAXS–WAXS • PXRD • SEM • ICP‑OES • TGA/DSC',
     },
     {
-      icon: <Target className="text-rose-600" size={24} />,
+      icon: <Target size={22} />,
+      color: 'rose',
       title: 'Goal',
-      detail: 'Bridge AI & Neuroscience',
-      sub: 'Build brain-inspired AI systems',
+      detail: 'Advance Materials Chemistry',
+      sub: 'Academic or Industry Research',
     },
   ];
+
+  const colorMap = {
+    emerald: {
+      bg: 'bg-emerald-50',
+      border: 'bg-emerald-500',
+      icon: 'text-emerald-600',
+      iconBg: 'bg-emerald-100',
+      hoverBorder: 'hover:border-emerald-200',
+    },
+    blue: {
+      bg: 'bg-blue-50',
+      border: 'bg-blue-500',
+      icon: 'text-blue-600',
+      iconBg: 'bg-blue-100',
+      hoverBorder: 'hover:border-blue-200',
+    },
+    amber: {
+      bg: 'bg-amber-50',
+      border: 'bg-amber-500',
+      icon: 'text-amber-600',
+      iconBg: 'bg-amber-100',
+      hoverBorder: 'hover:border-amber-200',
+    },
+    rose: {
+      bg: 'bg-rose-50',
+      border: 'bg-rose-500',
+      icon: 'text-rose-600',
+      iconBg: 'bg-rose-100',
+      hoverBorder: 'hover:border-rose-200',
+    },
+  };
 
   const timeline = [
     {
-      year: '2022 – Present',
-      title: 'PhD Candidate, Computer Science',
-      place: 'Stanford University',
-      desc: 'Researching brain-inspired machine learning models under Prof. Sarah Chen. Published in top-tier venues including NeurIPS and ICML.',
+      year: 'Dec 2025 – Present',
+      title: 'PhD Researcher, Bioscience Engineering',
+      place: 'KU Leuven',
+      location: 'Leuven, Belgium',
+      desc: 'Working on zeolite phase selection, silicate chemistry, and in situ synchrotron characterization. Investigating crystallization pathways in HSIL-based systems using SAXS–WAXS and complementary ex situ techniques.',
+      current: true,
     },
     {
-      year: '2020 – 2022',
-      title: 'M.S. in Artificial Intelligence',
-      place: 'MIT',
-      desc: 'Focused on reinforcement learning and computational cognitive science. Thesis on neural network interpretability.',
+      year: 'Feb 2024 – Nov 2024',
+      title: 'Predoctoral Programme (23 ECTS)',
+      place: 'KU Leuven',
+      location: 'Leuven, Belgium',
+      desc: 'Completed courses in Heterogeneous Catalysis, Highly Dispersed Materials, and a 12‑ECTS research project focused on zeolite synthesis, framework composition, and phase selection.',
+      current: false,
     },
     {
-      year: '2016 – 2020',
-      title: 'B.S. in Mathematics & CS',
-      place: 'UC Berkeley',
-      desc: 'Double major with honors. Undergraduate research in statistical learning theory. Summa cum laude.',
+      year: 'Aug 2020 – Aug 2022',
+      title: 'M.Sc. Physics (Material Sciences)',
+      place: 'Jamia Millia Islamia',
+      location: 'New Delhi, India',
+      desc: 'CGPA 9.26/10 (Rank 4/45). Specialized in materials science, condensed matter physics, semiconductor devices, and advanced characterization techniques. Graduated with distinction.',
+      current: false,
     },
   ];
 
+  const interests = [
+    { emoji: '🥾', label: 'Hiking & Backpacking' },
+    { emoji: '💻', label: 'Coding & AI' },
+    { emoji: '🎵', label: 'Music' },
+    { emoji: '🎬', label: 'Movies' },
+    { emoji: '📚', label: 'Reading' },
+    { emoji: '🏋️', label: 'Gym & Fitness' },
+  ];
+
   return (
-    <section id="about" className="py-24 bg-stone-50">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
-        <div className="max-w-2xl mb-16">
-          <span className="text-emerald-700 font-semibold text-sm tracking-widest uppercase">About Me</span>
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-3 mb-6 leading-tight">
-            A researcher with a curiosity for both <span className="text-emerald-700">science</span> and <span className="text-emerald-700">life</span>
-          </h2>
-          <p className="text-gray-600 text-lg leading-relaxed">
-            I'm a third-year PhD student at Stanford, driven by the belief that understanding the brain can help us build better AI. 
-            Outside the lab, I'm a firm believer in work-life balance — whether that means deadlifting at 6am, 
-            backpacking through Southeast Asia, or cooking a new recipe. I think the best ideas come from diverse experiences.
-          </p>
+    <section id="about" className="relative overflow-hidden bg-stone-50 py-24">
+      {/* Background accents */}
+      <div className="pointer-events-none absolute inset-0">
+        <div className="absolute -left-24 top-0 h-72 w-72 rounded-full bg-emerald-100/40 blur-3xl" />
+        <div className="absolute -right-20 bottom-10 h-64 w-64 rounded-full bg-stone-200/60 blur-3xl" />
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(16,185,129,0.04)_1px,transparent_1px),linear-gradient(to_bottom,rgba(16,185,129,0.04)_1px,transparent_1px)] bg-[size:36px_36px] opacity-30" />
+      </div>
+
+      <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+
+        {/* Header */}
+        <div className="mb-16 grid grid-cols-1 gap-10 lg:grid-cols-2 lg:items-center">
+          <div>
+            <div className="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-white/80 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.22em] text-emerald-700 shadow-sm backdrop-blur">
+              <Sparkles size={13} />
+              About Me
+            </div>
+
+            <h2 className="mt-5 text-3xl font-bold leading-tight tracking-tight text-gray-900 md:text-4xl">
+              A researcher driven by curiosity for{' '}
+              <span className="relative inline-block text-emerald-700">
+                materials science
+                <svg className="absolute -bottom-1 left-0 w-full" viewBox="0 0 200 8" fill="none">
+                  <path d="M1 5.5 C50 1.5, 100 7.5, 199 3.5" stroke="#6ee7b7" strokeWidth="2.5" strokeLinecap="round" />
+                </svg>
+              </span>{' '}
+              and{' '}
+              <span className="relative inline-block text-emerald-700">
+                discovery
+                <svg className="absolute -bottom-1 left-0 w-full" viewBox="0 0 60 8" fill="none">
+                  <path d="M1 5.5 C15 1.5, 35 7.5, 59 3.5" stroke="#6ee7b7" strokeWidth="2.5" strokeLinecap="round" />
+                </svg>
+              </span>
+            </h2>
+
+            <p className="mt-6 text-base leading-8 text-gray-600 md:text-lg">
+              I’m a materials nerd who spends most of my time thinking about silicates,
+              zeolites, and why crystals decide to grow the way they do. I love chasing
+              phase diagrams, poking at HSIL chemistry, and watching SAXS–WAXS curves reveal
+              secrets at 3 a.m. When I’m not convincing atoms to behave, you’ll probably find
+              me hiking or backpacking somewhere quiet, lifting at the gym,
+               tinkering with code and AI projects, or lost in music, movies, or a good book.
+               With one foot in physics and the other in chemistry, I’m just trying to understand how tiny 
+               atoms make big decisions, and enjoy life along the way.
+            </p>
+
+            <a
+              href="#contact"
+              className="mt-8 inline-flex items-center gap-2 rounded-full bg-emerald-700 px-6 py-3 text-sm font-semibold text-white shadow-sm transition-all hover:-translate-y-0.5 hover:bg-emerald-600 hover:shadow-md"
+            >
+              Get in touch
+              <ArrowRight size={16} />
+            </a>
+          </div>
+
+          {/* Photo + Interests */}
+          <div className="flex flex-col items-center gap-6">
+            <div className="relative">
+              <div className="h-56 w-56 overflow-hidden rounded-3xl border-4 border-white shadow-xl sm:h-64 sm:w-64">
+                <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-emerald-100 to-stone-100 text-5xl">
+                  🧪
+                </div>
+              </div>
+
+              <div className="absolute -bottom-4 -right-4 rounded-2xl border border-emerald-100 bg-white px-4 py-2 shadow-lg">
+                <p className="text-xs font-semibold text-gray-500">Currently at</p>
+                <p className="text-sm font-bold text-emerald-700">KU Leuven</p>
+              </div>
+
+              <div className="absolute -left-3 -top-3 h-5 w-5 rounded-full bg-emerald-200" />
+              <div className="absolute -left-6 top-8 h-2.5 w-2.5 rounded-full bg-emerald-300" />
+            </div>
+
+            <div className="mt-6 text-center">
+              <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-gray-400">
+                Outside the Lab
+              </p>
+              <div className="flex flex-wrap justify-center gap-2">
+                {interests.map((item) => (
+                  <span
+                    key={item.label}
+                    className="inline-flex items-center gap-1.5 rounded-full border border-stone-200 bg-white px-3 py-1.5 text-xs font-semibold text-gray-600 shadow-sm transition hover:-translate-y-0.5 hover:border-emerald-200 hover:text-emerald-700"
+                  >
+                    {item.emoji} {item.label}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Highlight Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-20">
-          {highlights.map((item, i) => (
-            <div
-              key={i}
-              className="bg-white p-6 rounded-2xl border border-gray-100 hover:border-emerald-200 hover:shadow-lg hover:shadow-emerald-50 transition-all duration-300 group"
-            >
-              <div className="mb-4 w-12 h-12 rounded-xl bg-gray-50 group-hover:bg-emerald-50 flex items-center justify-center transition-colors">
-                {item.icon}
+        <div className="mb-20 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {highlights.map((item) => {
+            const c = colorMap[item.color];
+            return (
+              <div
+                key={item.title}
+                className={`group relative overflow-hidden rounded-2xl border border-gray-100 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg ${c.hoverBorder}`}
+              >
+                <div className={`absolute left-0 top-0 h-1 w-full ${c.border}`} />
+
+                <div className={`mb-4 flex h-12 w-12 items-center justify-center rounded-xl ${c.iconBg} ${c.icon} transition-transform duration-300 group-hover:scale-110`}>
+                  {item.icon}
+                </div>
+
+                <p className="text-xs font-semibold uppercase tracking-wider text-gray-400">
+                  {item.title}
+                </p>
+                <h3 className="mt-1 text-base font-bold text-gray-900">{item.detail}</h3>
+                <p className="mt-1 text-sm text-gray-500">{item.sub}</p>
               </div>
-              <p className="text-xs text-gray-400 font-semibold uppercase tracking-wider">{item.title}</p>
-              <h3 className="text-lg font-bold text-gray-900 mt-1">{item.detail}</h3>
-              <p className="text-sm text-gray-500 mt-1">{item.sub}</p>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
         {/* Academic Timeline */}
         <div>
-          <h3 className="text-2xl font-bold text-gray-900 mb-10">Academic Journey</h3>
+          <div className="mb-10">
+            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-emerald-700">
+              Background
+            </p>
+            <h3 className="mt-2 text-2xl font-bold text-gray-900 md:text-3xl">
+              Academic Journey
+            </h3>
+          </div>
+
           <div className="relative">
-            <div className="absolute left-[18px] top-2 bottom-2 w-px bg-emerald-200 hidden md:block"></div>
-            <div className="space-y-10">
-              {timeline.map((item, i) => (
-                <div key={i} className="flex gap-8 group">
-                  <div className="hidden md:flex flex-col items-center">
-                    <div className="w-9 h-9 rounded-full bg-emerald-100 border-2 border-emerald-400 flex items-center justify-center flex-shrink-0 group-hover:bg-emerald-600 group-hover:border-emerald-600 transition-colors">
-                      <div className="w-2.5 h-2.5 rounded-full bg-emerald-600 group-hover:bg-white transition-colors"></div>
+            <div className="absolute bottom-3 left-[19px] top-3 hidden w-px bg-gradient-to-b from-emerald-300 via-emerald-200 to-transparent md:block" />
+
+            <div className="space-y-6">
+              {timeline.map((item) => (
+                <div key={item.title} className="group flex gap-6">
+                  <div className="hidden flex-shrink-0 flex-col items-center pt-6 md:flex">
+                    <div
+                      className={`relative flex h-10 w-10 items-center justify-center rounded-full border-2 transition-all duration-300 ${
+                        item.current
+                          ? 'border-emerald-500 bg-emerald-500'
+                          : 'border-emerald-300 bg-white group-hover:border-emerald-500 group-hover:bg-emerald-500'
+                      }`}
+                    >
+                      <div
+                        className={`h-3 w-3 rounded-full transition-all duration-300 ${
+                          item.current ? 'bg-white' : 'bg-emerald-300 group-hover:bg-white'
+                        }`}
+                      />
+                      {item.current && (
+                        <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-25" />
+                      )}
                     </div>
                   </div>
-                  <div className="flex-1 bg-white p-6 md:p-8 rounded-2xl border border-gray-100 hover:shadow-md transition-shadow">
-                    <span className="text-emerald-700 text-sm font-bold">{item.year}</span>
-                    <h4 className="text-xl font-bold text-gray-900 mt-1">{item.title}</h4>
-                    <p className="text-emerald-600 font-medium text-sm mb-2">{item.place}</p>
-                    <p className="text-gray-600 leading-relaxed">{item.desc}</p>
+
+                  <div className="flex-1 overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-emerald-100 hover:shadow-md">
+                    <div className="p-6 md:p-8">
+                      <div className="flex flex-wrap items-start justify-between gap-3">
+                        <div>
+                          <span className="inline-block rounded-full bg-emerald-50 px-3 py-1 text-xs font-bold text-emerald-700 ring-1 ring-inset ring-emerald-100">
+                            {item.year}
+                          </span>
+                          <h4 className="mt-3 text-lg font-bold text-gray-900 md:text-xl">
+                            {item.title}
+                          </h4>
+                          <div className="mt-1 flex flex-wrap items-center gap-3">
+                            <p className="text-sm font-semibold text-emerald-600">
+                              {item.place}
+                            </p>
+                            <span className="inline-flex items-center gap-1 text-xs text-gray-400">
+                              <MapPin size={11} />
+                              {item.location}
+                            </span>
+                          </div>
+                        </div>
+
+                        {item.current && (
+                          <span className="rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-emerald-700">
+                            Current
+                          </span>
+                        )}
+                      </div>
+
+                      <p className="mt-4 text-sm leading-7 text-gray-600 md:text-base">
+                        {item.desc}
+                      </p>
+                    </div>
                   </div>
                 </div>
               ))}
             </div>
           </div>
         </div>
+
       </div>
     </section>
   );
