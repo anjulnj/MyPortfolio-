@@ -1,14 +1,19 @@
 import {
-  mail,
-  map-pin,
-  calendar,
-  Send,
-  ExternalLink,
-  Github,
-  Linkedin,
-  BookOpen,
-  CircleUserRound,
-} from "lucide-react";
+  MdEmail,
+  MdLocationOn,
+  MdCalendarToday,
+  MdSend
+} from "react-icons/md";
+
+import { FiExternalLink } from "react-icons/fi";
+
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+
+import {
+  SiGooglescholar,
+  SiResearchgate,
+  SiOrcid
+} from "react-icons/si";
 
 const Contact = () => {
   return (
@@ -38,7 +43,7 @@ const Contact = () => {
               {/* EMAIL */}
               <div className="flex items-center gap-5">
                 <div className="w-12 h-12 bg-emerald-600/10 rounded-xl flex items-center justify-center border border-emerald-600/20">
-                  <Mail className="text-emerald-400" size={20} />
+                  <MdEmail className="text-emerald-400" size={20} />
                 </div>
                 <div>
                   <p className="text-xs text-gray-500 uppercase tracking-wider font-semibold">
@@ -54,7 +59,7 @@ const Contact = () => {
               {/* LOCATION */}
               <div className="flex items-center gap-5">
                 <div className="w-12 h-12 bg-blue-600/10 rounded-xl flex items-center justify-center border border-blue-600/20">
-                  <MapPin className="text-blue-400" size={20} />
+                  <MdLocationOn className="text-blue-400" size={20} />
                 </div>
                 <div>
                   <p className="text-xs text-gray-500 uppercase tracking-wider font-semibold">
@@ -69,7 +74,7 @@ const Contact = () => {
               {/* EMAIL HOURS */}
               <div className="flex items-center gap-5">
                 <div className="w-12 h-12 bg-purple-600/10 rounded-xl flex items-center justify-center border border-purple-600/20">
-                  <Calendar className="text-purple-400" size={20} />
+                  <MdCalendarToday className="text-purple-400" size={20} />
                 </div>
                 <div>
                   <p className="text-xs text-gray-500 uppercase tracking-wider font-semibold">
@@ -96,9 +101,9 @@ const Contact = () => {
                   rel="noreferrer"
                   className="px-4 py-2 bg-white/5 border border-white/10 rounded-full text-sm text-gray-300 hover:text-white hover:bg-white/10 hover:border-white/20 transition-all flex items-center gap-2"
                 >
-                  <BookOpen size={14} className="text-emerald-400" />
+                  <SiGooglescholar size={14} className="text-emerald-400" />
                   Google Scholar
-                  <ExternalLink size={12} />
+                  <FiExternalLink size={12} />
                 </a>
 
                 {/* RESEARCHGATE */}
@@ -108,9 +113,9 @@ const Contact = () => {
                   rel="noreferrer"
                   className="px-4 py-2 bg-white/5 border border-white/10 rounded-full text-sm text-gray-300 hover:text-white hover:bg-white/10 hover:border-white/20 transition-all flex items-center gap-2"
                 >
-                  <BookOpen size={14} className="text-emerald-400" />
+                  <SiResearchgate size={14} className="text-emerald-400" />
                   ResearchGate
-                  <ExternalLink size={12} />
+                  <FiExternalLink size={12} />
                 </a>
 
                 {/* LINKEDIN */}
@@ -120,9 +125,9 @@ const Contact = () => {
                   rel="noreferrer"
                   className="px-4 py-2 bg-white/5 border border-white/10 rounded-full text-sm text-gray-300 hover:text-white hover:bg-white/10 hover:border-white/20 transition-all flex items-center gap-2"
                 >
-                  <Linkedin size={14} className="text-emerald-400" />
+                  <FaLinkedin size={14} className="text-emerald-400" />
                   LinkedIn
-                  <ExternalLink size={12} />
+                  <FiExternalLink size={12} />
                 </a>
 
                 {/* ORCID */}
@@ -132,9 +137,9 @@ const Contact = () => {
                   rel="noreferrer"
                   className="px-4 py-2 bg-white/5 border border-white/10 rounded-full text-sm text-gray-300 hover:text-white hover:bg-white/10 hover:border-white/20 transition-all flex items-center gap-2"
                 >
-                  <CircleUserRound size={14} className="text-emerald-400" />
+                  <SiOrcid size={14} className="text-emerald-400" />
                   ORCID
-                  <ExternalLink size={12} />
+                  <FiExternalLink size={12} />
                 </a>
 
                 {/* GITHUB */}
@@ -144,9 +149,9 @@ const Contact = () => {
                   rel="noreferrer"
                   className="px-4 py-2 bg-white/5 border border-white/10 rounded-full text-sm text-gray-300 hover:text-white hover:bg-white/10 hover:border-white/20 transition-all flex items-center gap-2"
                 >
-                  <Github size={14} className="text-emerald-400" />
+                  <FaGithub size={14} className="text-emerald-400" />
                   GitHub
-                  <ExternalLink size={12} />
+                  <FiExternalLink size={12} />
                 </a>
               </div>
             </div>
@@ -186,10 +191,11 @@ const Contact = () => {
 
               <button className="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3.5 rounded-xl flex items-center justify-center gap-2">
                 Send Message
-                <Send size={18} />
+                <MdSend size={18} />
               </button>
             </form>
           </div>
+
         </div>
       </div>
     </section>
