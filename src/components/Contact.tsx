@@ -7,7 +7,6 @@ import {
   Github,
   Linkedin,
   BookOpen,
-  Globe,
   CircleUserRound,
 } from "lucide-react";
 
