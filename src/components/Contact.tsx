@@ -1,7 +1,7 @@
 import {
-  Mail,
-  MapPin,
-  Calendar,
+  mail,
+  map-pin,
+  calendar,
   Send,
   ExternalLink,
   Github,
