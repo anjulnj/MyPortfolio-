@@ -1,14 +1,14 @@
 import { 
-  Mail, 
-  MapPin, 
-  Calendar, 
-  Send, 
-  ExternalLink, 
-  Github, 
-  Linkedin, 
-  BookOpenCheck, 
-  Globe, 
-  GraduationCap 
+  Mail,
+  MapPin,
+  Calendar,
+  Send,
+  ExternalLink,
+  Github,
+  Linkedin,
+  BookOpen,
+  Network,
+  CircleUserRound
 } from 'lucide-react';
 
 const Contact = () => {
@@ -77,7 +77,7 @@ const Contact = () => {
               </div>
             </div>
 
-            {/* ACADEMIC + PROFESSIONAL LINKS */}
+            {/* ONLINE LINKS */}
             <div>
               <p className="text-xs text-gray-500 uppercase tracking-wider font-semibold mb-3">
                 Find me online
@@ -93,7 +93,7 @@ const Contact = () => {
                   text-sm text-gray-300 hover:text-white hover:bg-white/10 hover:border-white/20 
                   transition-all flex items-center gap-2"
                 >
-                  <BookOpenCheck size={14} className="text-emerald-400" />
+                  <BookOpen size={14} className="text-emerald-400" />
                   Google Scholar
                   <ExternalLink size={12} />
                 </a>
@@ -106,7 +106,7 @@ const Contact = () => {
                   text-sm text-gray-300 hover:text-white hover:bg-white/10 hover:border-white/20 
                   transition-all flex items-center gap-2"
                 >
-                  <Globe size={14} className="text-emerald-400" />
+                  <Network size={14} className="text-emerald-400" />
                   ResearchGate
                   <ExternalLink size={12} />
                 </a>
@@ -132,7 +132,7 @@ const Contact = () => {
                   text-sm text-gray-300 hover:text-white hover:bg-white/10 hover:border-white/20 
                   transition-all flex items-center gap-2"
                 >
-                  <GraduationCap size={14} className="text-emerald-400" />
+                  <CircleUserRound size={14} className="text-emerald-400" />
                   ORCID
                   <ExternalLink size={12} />
                 </a>
