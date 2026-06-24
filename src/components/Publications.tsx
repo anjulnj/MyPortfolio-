@@ -1,4 +1,5 @@
 import { FileText, ExternalLink, Star } from 'lucide-react';
+
 const Publications = () => {
   const publications = [
     {
@@ -58,6 +59,7 @@ const Publications = () => {
   return (
     <section id="publications" className="py-24 bg-stone-50">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-4">
           <div>
@@ -87,9 +89,7 @@ const Publications = () => {
             <div
               key={i}
               className={`bg-white p-6 md:p-8 rounded-2xl border transition-all duration-300 hover:shadow-md group ${
-                pub.highlight
-                  ? 'border-emerald-200 shadow-sm'
-                  : 'border-gray-100'
+                pub.highlight ? 'border-emerald-200 shadow-sm' : 'border-gray-100'
               }`}
             >
               <div className="flex items-start gap-4">
@@ -142,6 +142,7 @@ const Publications = () => {
             </div>
           ))}
         </div>
+
       </div>
     </section>
   );
