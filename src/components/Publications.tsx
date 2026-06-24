@@ -1,5 +1,4 @@
 import { FileText, ExternalLink, Star } from 'lucide-react';
-
 const Publications = () => {
   const publications = [
     {
