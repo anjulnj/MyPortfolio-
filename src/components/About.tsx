@@ -3,32 +3,32 @@ import { GraduationCap, Brain, Target, Award, Sparkles, MapPin, ArrowRight } fro
 const About = () => {
   const highlights = [
     {
-      icon: <GraduationCap size={22} />,
-      color: 'emerald',
-      title: 'Education',
-      detail: 'PhD in Bioscience Engineering',
-      sub: 'KU Leuven • 2025 – Present',
-    },
-    {
       icon: <Brain size={22} />,
-      color: 'blue',
-      title: 'Research Focus',
-      detail: 'Ordered and Disordered Silicates, Crystallization Kinetics and Mechanisms',
-      sub: 'Zeolite Synthesis and Chemistry • Ionic Liquids',
+      color: 'emerald',
+      title: 'Research Domain',
+      detail: 'Material Organization & Crystallization',
+      sub: 'How structure emerges from complex chemical environments',
     },
     {
       icon: <Award size={22} />,
-      color: 'amber',
-      title: 'Expertise',
-      detail: 'Advanced in situ and ex situ Characterization',
-      sub: 'Synchrotron SAXS–WAXS • PXRD • SEM • ICP‑OES • TGA/DSC • In situ Conductivity Measurements',
+      color: 'blue',
+      title: 'Techniques I Use',
+      detail: 'In situ & Ex situ Characterization',
+      sub: 'Structural analysis • Synthesis • Mechanistic studies',
     },
     {
       icon: <Target size={22} />,
+      color: 'amber',
+      title: 'Scientific Questions I Ask',
+      detail: 'How do disordered species become ordered?',
+      sub: 'What governs pathway selection during crystallization?',
+    },
+    {
+      icon: <GraduationCap size={22} />,
       color: 'rose',
-      title: 'Goal',
-      detail: 'Advance Materials Science',
-      sub: 'Academic or Industry Research',
+      title: 'Current Mission',
+      detail: 'Decode Structure Formation',
+      sub: 'Link atomic interactions to material behavior',
     },
   ];
 
@@ -65,38 +65,38 @@ const About = () => {
 
   const timeline = [
     {
-      year: 'Dec 2025 – Present',
-      title: 'PhD Researcher, Bioscience Engineering',
-      place: 'KU Leuven',
-      location: 'Belgium',
-      desc: 'I study how zeolites choose their final structure by blending thermodynamics, kinetics, and real‑time crystallization insights. Using in situ SAXS–WAXS alongside sharp ex situ techniques, I track how HSIL‑based systems evolve from early species to full frameworks, turning zeolite formation into a clear, traceable storyline.',
+      year: '2025 – Present',
+      title: 'Current Research Role',
+      place: 'Research Environment',
+      location: '—',
+      desc: 'Exploring how structural order emerges in complex material systems using synthesis, characterization, and mechanistic analysis.',
       current: true,
     },
     {
-      year: 'Feb 2024 – Nov 2024',
-      title: 'Predoctoral Programme (23 ECTS)',
-      place: 'KU Leuven',
-      location: 'Belgium',
-      desc: 'Completed a Research project focused on zeolite synthesis, framework composition, and phase selection with related courses like Heterogeneous Catalysis and  Highly Dispersed Materials, ',
+      year: '2024',
+      title: 'Research Training Program',
+      place: 'Academic Setting',
+      location: '—',
+      desc: 'Completed foundational coursework and research training in materials science, catalysis, and structure–property relationships.',
       current: false,
     },
     {
-      year: 'Aug 2020 – Aug 2022',
-      title: 'M.Sc. Physics (Material Sciences)',
-      place: 'Jamia Millia Islamia',
-      location: 'New Delhi, India',
-      desc: 'CGPA 9.26/10 with specialization in materials science, condensed matter physics, semiconductor devices, and advanced characterization techniques.',
+      year: '2020 – 2022',
+      title: 'Master’s in Material Sciences',
+      place: 'University',
+      location: '—',
+      desc: 'Focused on materials science, condensed matter physics, and advanced characterization techniques.',
       current: false,
     },
   ];
 
   const interests = [
-    { emoji: '🥾', label: 'Hiking & Backpacking' },
+    { emoji: '🥾', label: 'Hiking' },
+    { emoji: '📷', label: 'Photography' },
+    { emoji: '🍳', label: 'Cooking' },
     { emoji: '💻', label: 'Coding & AI' },
-    { emoji: '🎵', label: 'Music' },
-    { emoji: '🎬', label: 'Movies' },
-    { emoji: '📚', label: 'Reading' },
-    { emoji: '🏋️', label: 'Gym & Fitness' },
+    { emoji: '🏋️', label: 'Fitness' },
+    { emoji: '✈️', label: 'Travel' },
   ];
 
   return (
@@ -135,16 +135,24 @@ const About = () => {
               </span>
             </h2>
 
-            <p className="mt-6 text-base leading-8 text-gray-600 md:text-lg">
-              I’m a materials nerd who spends most of my time thinking about silicates,
-              zeolites, and why crystals decide to grow the way they do. I love chasing
-              phase diagrams, poking at HSIL chemistry, and watching SAXS–WAXS curves reveal
-              secrets at 3 a.m. When I’m not convincing atoms to behave, you’ll probably find
-              me hiking or backpacking somewhere quiet, lifting at the gym,
-               tinkering with code and AI projects, or lost in music, movies, or a good book.
-               With one foot in physics and the other in chemistry, I’m just trying to understand how tiny 
-               atoms make big decisions, and enjoy life along the way.
-            </p>
+            <div className="mt-6 space-y-4 text-base leading-8 text-gray-600 md:text-lg">
+              <p>
+                I’m a curiosity‑driven researcher working at the intersection of materials science,
+                physics, and chemistry. I explore how complex materials organize, transform, and
+                develop structure.
+              </p>
+
+              <p>
+                My work focuses on understanding how disordered species transition into ordered
+                frameworks, how crystallization pathways compete, and how atomic‑scale interactions
+                shape final material behavior.
+              </p>
+
+              <p>
+                Outside research, I enjoy hiking, photography, cooking, fitness, coding, and
+                exploring ideas through books, technology, and travel.
+              </p>
+            </div>
 
             <a
               href="#contact"
@@ -166,7 +174,7 @@ const About = () => {
 
               <div className="absolute -bottom-4 -right-4 rounded-2xl border border-emerald-100 bg-white px-4 py-2 shadow-lg">
                 <p className="text-xs font-semibold text-gray-500">Currently at</p>
-                <p className="text-sm font-bold text-emerald-700">KU Leuven</p>
+                <p className="text-sm font-bold text-emerald-700">Research Environment</p>
               </div>
 
               <div className="absolute -left-3 -top-3 h-5 w-5 rounded-full bg-emerald-200" />
