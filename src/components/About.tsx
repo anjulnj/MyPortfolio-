@@ -5,7 +5,7 @@ const skills = [
   {
     icon: <FlaskConical size={20} />,
     title: 'Lab & Characterization',
-    detail: 'XRD, SEM, ICP-OES, AAS, TGA-DSC, NMR, Raman, FTIR, UV-Vis, TEM, Profex',
+    detail: 'XRD, SEM, ICP-OES, AAS, TGA-DSC, Raman, FTIR, UV-Vis, TEM, Profex',
   },
   {
     icon: <Code2 size={20} />,
@@ -94,11 +94,15 @@ const About = () => {
             <div className="flex flex-col items-center gap-6">
               <div className="relative">
                 <div className="h-56 w-56 overflow-hidden rounded-3xl border-4 border-white shadow-xl sm:h-64 sm:w-64">
-                  <img src="/research1.jpg" alt="In the lab" className="h-full w-full object-cover" />
+                  <img
+                    src="/ku-leuven-library.jpg"
+                    alt="KU Leuven University Library, Ladeuzeplein"
+                    className="h-full w-full object-cover"
+                  />
                 </div>
                 <div className="absolute -bottom-4 -right-4 rounded-2xl border border-emerald-100 bg-white px-4 py-2 shadow-lg">
-                  <p className="text-xs font-semibold text-gray-500">Based in</p>
-                  <p className="text-sm font-bold text-emerald-700">Leuven, Belgium</p>
+                  <p className="text-xs font-semibold text-gray-500">Based at</p>
+                  <p className="text-sm font-bold text-emerald-700">KU Leuven, Belgium</p>
                 </div>
               </div>
 

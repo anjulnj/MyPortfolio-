@@ -30,13 +30,6 @@ const education = [
     grade: '80.2% — Rank 1/545, 1st Division with Distinction',
     note: 'Physics major (82.66%) · Mathematics major (76.76%) · Chemistry minor (81.3%)',
   },
-  {
-    year: '2016',
-    title: 'Class XII (CBSE)',
-    place: 'CBSE, Delhi, India',
-    grade: 'Grade A1 — 92.2%, Rank 1/90',
-    note: 'Physics 95% · Chemistry 95% · Mathematics 86%',
-  },
 ];
 
 const achievements = [
