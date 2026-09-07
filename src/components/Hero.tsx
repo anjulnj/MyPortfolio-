@@ -1,6 +1,7 @@
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion, useScroll, useTransform, useMotionValueEvent } from 'framer-motion';
 import { useRef } from 'react';
 import { MapPin, ArrowDown, Mail } from 'lucide-react';
+import ZeoliteScene from './ZeoliteScene';
 
 const Hero = () => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -9,11 +10,16 @@ const Hero = () => {
     offset: ['start start', 'end start'],
   });
 
-  // Subtle parallax on the background image and a soft fade on scroll —
-  // driven straight off scroll progress, not a fixed-duration animation.
-  const bgY = useTransform(scrollYProgress, [0, 1], ['0%', '18%']);
+  // Soft content fade on scroll, driven straight off scroll progress.
   const contentOpacity = useTransform(scrollYProgress, [0, 0.7], [1, 0]);
   const contentY = useTransform(scrollYProgress, [0, 1], ['0%', '12%']);
+
+  // The 3D scene reads scroll progress every animation frame via a plain
+  // ref (not React state) so scrolling never triggers a React re-render.
+  const sceneProgress = useRef(0);
+  useMotionValueEvent(scrollYProgress, 'change', (v) => {
+    sceneProgress.current = v;
+  });
 
   return (
     <section
@@ -21,18 +27,14 @@ const Hero = () => {
       id="home"
       className="relative flex min-h-screen items-center justify-center overflow-hidden bg-black"
     >
-      {/* Background */}
-      <motion.div
-        className="absolute inset-0 z-0"
-        style={{
-          y: bgY,
-          backgroundImage: 'url("/hero-bg.jpg")',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-        }}
-      >
-        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/55 to-black/85" />
-      </motion.div>
+      {/* Background — no photo: a real FAU zeolite framework rendered in 3D
+          and given a scroll-linked turn, on a dark radial gradient. */}
+      <div className="absolute inset-0 z-0 bg-[radial-gradient(ellipse_at_50%_35%,#0f2e26_0%,#050807_55%,#000000_100%)]" />
+      <div className="absolute inset-0 z-0 opacity-40">
+        <ZeoliteScene scrollProgress={sceneProgress} />
+      </div>
+      {/* Scrim so the framework reads as texture behind the text, not noise */}
+      <div className="absolute inset-0 z-[1] bg-[radial-gradient(ellipse_at_50%_45%,rgba(0,0,0,0.55)_0%,rgba(0,0,0,0.15)_45%,transparent_75%)]" />
 
       {/* Content */}
       <motion.div

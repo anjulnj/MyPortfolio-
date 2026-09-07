@@ -1,5 +1,6 @@
 import { Dumbbell, Plane, BookOpen, Coffee, Mountain, Music } from 'lucide-react';
 import Reveal from './Reveal';
+import TravelMap from './TravelMap';
 
 const Life = () => {
   const interests = [
@@ -111,6 +112,13 @@ const Life = () => {
             </Reveal>
           ))}
         </div>
+
+        <Reveal delay={0.1} className="mt-16">
+          <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-gray-400">
+            Where I've Been
+          </p>
+          <TravelMap />
+        </Reveal>
 
         <Reveal className="mt-16 text-center">
           <blockquote className="text-2xl md:text-3xl font-serif italic text-gray-400 max-w-3xl mx-auto leading-relaxed">

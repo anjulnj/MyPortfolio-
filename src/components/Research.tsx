@@ -1,5 +1,6 @@
 import { Microscope, Atom, FlaskConical, MapPin, Calendar, Users, GraduationCap } from 'lucide-react';
 import Reveal from './Reveal';
+import XrdReveal from './XrdReveal';
 
 const projects = [
   {
@@ -89,7 +90,9 @@ const supervision = [
 
 const Research = () => {
   return (
-    <section id="research" className="relative bg-white py-24">
+    <section id="research" className="relative bg-white">
+      <XrdReveal />
+      <div className="py-24">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <Reveal className="mb-14 max-w-2xl">
           <p className="text-xs font-semibold uppercase tracking-[0.22em] text-emerald-700">
@@ -188,6 +191,7 @@ const Research = () => {
             </Reveal>
           ))}
         </div>
+      </div>
       </div>
     </section>
   );

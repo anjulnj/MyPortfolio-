@@ -1,5 +1,6 @@
 import { Sparkles, ArrowRight, FlaskConical, Code2, LineChart, Users } from 'lucide-react';
 import Reveal from './Reveal';
+import DisorderToOrder from './DisorderToOrder';
 
 const skills = [
   {
@@ -40,6 +41,7 @@ const About = () => {
         <div className="absolute -left-24 top-0 h-72 w-72 rounded-full bg-emerald-100/40 blur-3xl" />
         <div className="absolute -right-20 bottom-10 h-64 w-64 rounded-full bg-stone-200/60 blur-3xl" />
       </div>
+      <DisorderToOrder />
 
       <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="mb-16 grid grid-cols-1 gap-10 lg:grid-cols-2 lg:items-center">
