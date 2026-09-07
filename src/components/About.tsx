@@ -5,7 +5,7 @@ const skills = [
   {
     icon: <FlaskConical size={20} />,
     title: 'Lab & Characterization',
-    detail: 'ICP-OES, AAS, XRD, SEM, TGA, NMR, Raman, FTIR, UV-Vis, TEM',
+    detail: 'XRD, SEM, ICP-OES, AAS, TGA-DSC, NMR, Raman, FTIR, UV-Vis, TEM, Profex',
   },
   {
     icon: <Code2 size={20} />,
@@ -14,8 +14,8 @@ const skills = [
   },
   {
     icon: <LineChart size={20} />,
-    title: 'Analysis & Reporting',
-    detail: 'Data & trend analysis, technical reporting, experiment design',
+    title: 'Synchrotron & Advanced Methods',
+    detail: 'SAXS/WAXS, Impedance Spectroscopy, Broadband Dielectric Spectroscopy',
   },
   {
     icon: <Users size={20} />,
@@ -62,15 +62,18 @@ const About = () => {
 
             <div className="mt-6 space-y-4 text-base leading-8 text-gray-600 md:text-lg">
               <p>
-                I'm a materials scientist and engineering physicist based in Belgium, with a
-                pre-doctoral background in bioscience engineering at KU Leuven. My focus is the
-                chemistry of silicates, porous materials, and zeolites — understanding how cation
-                combinations steer phase selection and framework composition during synthesis.
+                I'm a PhD researcher at the Department of Bioscience Engineering, KU Leuven,
+                working under Prof. Christine Kirschhock and Dr. Eric Breynaert. My focus is the
+                chemistry of silicates, porous materials, and zeolites — currently studying how
+                temperature guides ion association and porous framework formation during
+                crystallization.
               </p>
               <p>
-                I work across advanced characterization techniques — ICP-OES, AAS, XRD, SEM, TGA,
-                and synchrotron-based SAXS/WAXS — and I'm aiming to pursue a PhD to dig deeper into
-                how atomic-scale interactions shape material behavior.
+                My work spans advanced characterization — XRD, SEM, ICP-OES, AAS, TGA-DSC,
+                impedance spectroscopy, broadband dielectric spectroscopy, and synchrotron
+                SAXS/WAXS at the ESRF — and has led to 4 peer-reviewed publications (published
+                under the name <span className="font-semibold text-gray-800">Anjul Rais</span>),
+                including a first-author paper in Materials Horizons.
               </p>
               <p>
                 Outside the lab: hiking, photography, cooking, fitness, and building things in

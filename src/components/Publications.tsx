@@ -1,146 +1,169 @@
-import { GraduationCap, Presentation, Trophy, MapPin } from 'lucide-react';
+import { FileText, ExternalLink, Mic, Presentation as PresentationIcon } from 'lucide-react';
 import Reveal from './Reveal';
 
-const education = [
+const publications = [
   {
-    year: '2024',
-    title: 'Pre-doctoral Examination (23 ECTS)',
-    place: 'Dept. of Bioscience Engineering, KU Leuven, Belgium (QS #63, 2025)',
-    grade: 'Passed',
-    note: 'Heterogeneous Catalysis · Highly Dispersed Materials · Research Project',
+    authors: 'Rais, A., Vandenabeele, D., Doppelhammer, N., Asselman, K., Wangermez, W., Kirschhock, C. E. A., Breynaert, E.',
+    year: '2025',
+    title: 'Ion Exchange Selectivity Governs Phase Selection in Zeolite Synthesis',
+    journal: 'Materials Horizons',
+    doi: '10.1039/D5MH01044F',
+    sjr: 'SJR 2.885 · Q1',
+    firstAuthor: true,
   },
   {
-    year: '2022',
-    title: 'M.Sc. Physics — Materials Science Specialisation',
-    place: 'Jamia Millia Islamia (Central University), New Delhi, India (NIRF #3, 2023)',
-    grade: 'CGPA 9.26/10 — 1st Division with Distinction',
-    note: 'Condensed Matter Physics, Quantum Mechanics, Characterisation of Materials',
+    authors: 'Doppelhammer, N., Spira, D., Rais, A., Vandenabeele, D., Wangermez, W., McMonagle, C. J., Chernyshov, D., Breynaert, E.',
+    year: '2025',
+    title: 'Multi-Modal Impedance and X-Ray Characterization Enables Simultaneous Detection of Bulk and Interfacial Crystallization',
+    journal: 'Chemical Communications',
+    doi: '10.1039/D5CC03808A',
+    sjr: 'SJR 1.037 · Q1',
+    firstAuthor: false,
   },
   {
-    year: '2020',
-    title: 'B.Sc. Physics, Chemistry & Mathematics',
-    place: 'Mahatma Jyotiba Phule Rohilkhand University, Bareilly, India',
-    grade: '80.2% — 1st Division with Distinction',
-    note: 'Physics major (82.66%) · Mathematics major (76.76%) · Chemistry minor (81.3%)',
+    authors: 'Vandenabeele, D., Doppelhammer, N., Radhakrishnan, S., Chandran, C. V., Wangermez, W., Rais, A., Vandeurzen, E., et al.',
+    year: '2025',
+    title: 'Hydrated Silicate Ionic Liquids: Ionic Liquids for Silicate Material Synthesis',
+    journal: 'Journal of Molecular Liquids',
+    volume: '417, 126603',
+    doi: '10.1016/j.molliq.2024.126603',
+    sjr: 'SJR 0.935 · Q1',
+    firstAuthor: false,
   },
   {
-    year: '2016',
-    title: 'Class XII (CBSE)',
-    place: 'CBSE, Delhi, India',
-    grade: 'Grade A1 — 92.2%',
-    note: 'Physics 95% · Chemistry 95% · Mathematics 86%',
+    authors: 'Vandenabeele, D., Rais, A., Kirschhock, C., Breynaert, E.',
+    year: '2025',
+    title: 'What Drives Porosity in Aluminosilicate Zeolites?',
+    journal: 'CrystEngComm',
+    volume: '27(16), 2452–61',
+    doi: '10.1039/D5CE00034C',
+    sjr: 'SJR 0.520 · Q2',
+    firstAuthor: false,
   },
 ];
 
-const exams = [
-  'GATE (Graduate Aptitude Test in Engineering) 2022 — Physics',
-  'IIT-JEE Mains 2016 — 94.06 percentile',
-  '1st rank, International Mathematics Olympiad (School Level)',
-];
-
-const awards = [
-  'Among the top three in M.Sc. Physics at Jamia Millia Islamia',
-  'Gold Medallist, Bachelor of Science (all science courses); University topper, Maths group',
-  'School topper, Class X, XI and XII',
+const presentations = [
+  {
+    type: 'oral',
+    title:
+      'The Impact of Cation Combinations on Phase Selection and Framework Composition in Zeolites Synthesized Using Hydrated Silicate Ionic Liquids (HSILs)',
+    venue: '21st International Zeolite Conference (IZC-2025), Dalian, China',
+    date: '13–18 July 2025',
+  },
+  {
+    type: 'poster',
+    title: 'Influence of low Cs⁺ Fractions on MER and ANA formation in HSIL-based zeolite synthesis',
+    venue: 'ALBA Synchrotron, Spain',
+    date: 'Upcoming — 17 March 2026',
+    upcoming: true,
+  },
+  {
+    type: 'poster',
+    title: 'Influence of low Cs⁺ Fractions on MER and ANA formation in HSIL-based zeolite synthesis',
+    venue: '35th HERCULES School, ESRF, Grenoble, France',
+    date: '25 February 2026',
+  },
+  {
+    type: 'poster',
+    title: 'Investigating Phase Selection and Framework Composition in Mixed-cation Zeolites Synthesized using HSILs',
+    venue: 'Dutch Zeolite Association (DZA) Symposium, Leuven, Belgium',
+    date: '4 November 2024',
+  },
+  {
+    type: 'poster',
+    title: 'Impact of Cation Combinations on Phase Selection and Framework Composition of Zeolites Synthesized using HSILs',
+    venue: '6th Euro Asia Zeolite Conference (EAZC), Alicante, Spain',
+    date: '19–22 January 2024',
+  },
 ];
 
 const Publications = () => {
   return (
-    <section id="publications" className="relative bg-stone-50 py-24">
+    <section id="publications" className="relative bg-white py-24">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <Reveal className="mb-14 max-w-2xl">
           <p className="text-xs font-semibold uppercase tracking-[0.22em] text-emerald-700">
-            Education &amp; Recognition
+            Publications &amp; Presentations
           </p>
           <h2 className="display-2 mt-3 text-3xl font-semibold text-gray-900 md:text-4xl">
-            Academic background
+            Published work
           </h2>
+          <p className="mt-4 text-base leading-7 text-gray-600 md:text-lg">
+            Publishing under the name <span className="font-semibold text-gray-900">Anjul Rais</span>.
+          </p>
         </Reveal>
 
-        {/* Education timeline */}
-        <div className="relative mb-16">
-          <div className="absolute bottom-3 left-[19px] top-3 hidden w-px bg-gradient-to-b from-emerald-300 via-emerald-200 to-transparent md:block" />
-          <div className="space-y-5">
-            {education.map((e, i) => (
-              <Reveal key={e.title} delay={i * 0.06} className="group flex gap-6">
-                <div className="hidden flex-shrink-0 flex-col items-center pt-6 md:flex">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full border-2 border-emerald-300 bg-white transition-all duration-300 group-hover:border-emerald-500 group-hover:bg-emerald-500">
-                    <GraduationCap size={16} className="text-emerald-600 transition-colors group-hover:text-white" />
+        <div className="space-y-4">
+          {publications.map((p, i) => (
+            <Reveal key={p.doi} delay={i * 0.06}>
+              <a
+                href={`https://doi.org/${p.doi}`}
+                target="_blank"
+                rel="noreferrer"
+                className="group flex flex-col gap-3 rounded-2xl border border-gray-100 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-emerald-100 hover:shadow-md sm:flex-row sm:items-start sm:gap-5"
+              >
+                <div className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl bg-emerald-100 text-emerald-600">
+                  <FileText size={20} />
+                </div>
+                <div className="min-w-0 flex-1">
+                  <div className="flex flex-wrap items-center gap-2">
+                    {p.firstAuthor && (
+                      <span className="rounded-full bg-emerald-600 px-2.5 py-0.5 text-[11px] font-bold uppercase tracking-wide text-white">
+                        First Author
+                      </span>
+                    )}
+                    <span className="text-xs font-semibold uppercase tracking-wider text-emerald-700">
+                      {p.journal} · {p.year}
+                    </span>
                   </div>
+                  <h3 className="mt-2 text-base font-bold text-gray-900 group-hover:text-emerald-700 sm:text-lg">
+                    {p.title}
+                  </h3>
+                  <p className="mt-2 text-sm text-gray-500">{p.authors}</p>
+                  <p className="mt-2 text-xs font-medium text-gray-400">
+                    {p.volume ? `${p.volume} · ` : ''}
+                    {p.sjr} · doi:{p.doi}
+                  </p>
                 </div>
-                <div className="flex-1 rounded-2xl border border-gray-100 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md md:p-7">
-                  <span className="inline-block rounded-full bg-emerald-50 px-3 py-1 text-xs font-bold text-emerald-700 ring-1 ring-inset ring-emerald-100">
-                    {e.year}
-                  </span>
-                  <h3 className="mt-3 text-lg font-bold text-gray-900">{e.title}</h3>
-                  <p className="mt-1 text-sm font-semibold text-emerald-700">{e.place}</p>
-                  <p className="mt-2 text-sm text-gray-600">{e.grade}</p>
-                  <p className="mt-1 text-xs text-gray-400">{e.note}</p>
-                </div>
-              </Reveal>
-            ))}
-          </div>
+                <ExternalLink size={16} className="flex-shrink-0 text-gray-300 transition-colors group-hover:text-emerald-600" />
+              </a>
+            </Reveal>
+          ))}
         </div>
 
-        <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
-          {/* Presentation */}
-          <Reveal className="lg:col-span-2">
-            <div className="h-full rounded-2xl border border-gray-100 bg-white p-7 shadow-sm">
-              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-100 text-emerald-600">
-                <Presentation size={22} />
-              </div>
-              <p className="text-xs font-semibold uppercase tracking-wider text-emerald-700">
-                Poster Presentation
-              </p>
-              <h3 className="mt-2 text-lg font-bold text-gray-900">
-                "Investigating Phase Selection and Framework Composition in Mixed-cation Zeolites
-                Synthesized using HSILs"
-              </h3>
-              <p className="mt-3 flex items-center gap-2 text-sm text-gray-600">
-                <MapPin size={13} className="text-emerald-600" />
-                Dutch Zeolite Association (DZA) Symposium, organized by the Center for Sustainable
-                Catalysis and Engineering (CSCE), Leuven, Belgium — November 4, 2024
-              </p>
-            </div>
-          </Reveal>
-
-          {/* Exams */}
-          <Reveal delay={0.08}>
-            <div className="h-full rounded-2xl border border-gray-100 bg-white p-7 shadow-sm">
-              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-blue-100 text-blue-600">
-                <Trophy size={22} />
-              </div>
-              <p className="text-xs font-semibold uppercase tracking-wider text-blue-700">
-                Qualified Exams
-              </p>
-              <ul className="mt-3 space-y-2 text-sm text-gray-600">
-                {exams.map((ex) => (
-                  <li key={ex} className="flex gap-2">
-                    <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-blue-400" />
-                    {ex}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </Reveal>
-        </div>
-
-        {/* Academic excellence */}
-        <Reveal delay={0.1} className="mt-6">
-          <div className="rounded-2xl border border-amber-100 bg-amber-50/50 p-7">
-            <p className="text-xs font-semibold uppercase tracking-wider text-amber-700">
-              Academic Excellence
-            </p>
-            <div className="mt-3 grid grid-cols-1 gap-3 sm:grid-cols-3">
-              {awards.map((a) => (
-                <div key={a} className="flex gap-2 text-sm text-gray-700">
-                  <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-amber-400" />
-                  {a}
-                </div>
-              ))}
-            </div>
-          </div>
+        <Reveal delay={0.1} className="mt-14">
+          <h3 className="text-sm font-semibold uppercase tracking-[0.2em] text-gray-400">
+            Conference Presentations
+          </h3>
         </Reveal>
+
+        <div className="mt-6 grid grid-cols-1 gap-4 md:grid-cols-2">
+          {presentations.map((p, i) => (
+            <Reveal key={p.title + p.date} delay={0.1 + i * 0.05}>
+              <div
+                className={`h-full rounded-2xl border p-6 ${
+                  p.upcoming
+                    ? 'border-blue-100 bg-blue-50/40'
+                    : 'border-emerald-100 bg-emerald-50/40'
+                }`}
+              >
+                <div className="flex items-center gap-2">
+                  {p.type === 'oral' ? (
+                    <Mic size={14} className="text-emerald-700" />
+                  ) : (
+                    <PresentationIcon size={14} className="text-emerald-700" />
+                  )}
+                  <span className="text-xs font-bold uppercase tracking-wider text-emerald-700">
+                    {p.type === 'oral' ? 'Oral Presentation' : p.upcoming ? 'Upcoming Poster' : 'Poster'}
+                  </span>
+                </div>
+                <h4 className="mt-2 text-sm font-bold leading-snug text-gray-900">{p.title}</h4>
+                <p className="mt-2 text-xs text-gray-600">{p.venue}</p>
+                <p className="mt-1 text-xs font-medium text-gray-400">{p.date}</p>
+              </div>
+            </Reveal>
+          ))}
+        </div>
       </div>
     </section>
   );

@@ -56,7 +56,7 @@ const Hero = () => {
         >
           <MapPin size={13} className="text-emerald-400" />
           <span className="text-xs font-medium uppercase tracking-[0.2em] text-emerald-300">
-            Leuven, Belgium
+            PhD Researcher · KU Leuven, Belgium
           </span>
         </motion.div>
 
@@ -76,9 +76,10 @@ const Hero = () => {
           className="display-3 mx-auto mt-6 max-w-2xl text-lg font-normal text-white/75 sm:text-xl"
         >
           A <span className="font-medium text-emerald-300">materials scientist</span> and{' '}
-          <span className="font-medium text-emerald-300">engineering physicist</span> working on
-          silicates, porous materials, and zeolites — chasing how disorder becomes structure, one
-          synthesis at a time.
+          <span className="font-medium text-emerald-300">engineering physicist</span> researching
+          how temperature guides zeolite growth — with{' '}
+          <span className="font-medium text-emerald-300">4 published papers</span> and beamtime at
+          the ESRF along the way.
         </motion.p>
 
         <motion.div

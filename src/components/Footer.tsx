@@ -10,7 +10,7 @@ const Footer = () => {
             {[
               { label: 'Home', href: '#home' },
               { label: 'Research', href: '#research' },
-              { label: 'Education', href: '#publications' },
+              { label: 'Publications', href: '#publications' },
               { label: 'Contact', href: '#contact' },
             ].map((link) => (
               <a

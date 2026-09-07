@@ -50,9 +50,9 @@ const Contact = () => {
                   <p className="text-xs text-gray-500 uppercase tracking-wider font-semibold">
                     Email
                   </p>
-                  <p className="text-white font-medium">anjul@student.kuleuven.be</p>
+                  <p className="text-white font-medium">anjul@kuleuven.be</p>
                   <p className="text-gray-400 text-sm">
-                    Personal: anjul8477@gmail.com
+                    Personal: anjul01work@gmail.com
                   </p>
                 </div>
               </div>
