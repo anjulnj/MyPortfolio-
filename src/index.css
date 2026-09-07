@@ -1,5 +1,35 @@
 @import "tailwindcss";
 
+/*
+ * Design tokens — background system
+ * ----------------------------------
+ * Exactly two background tones exist on this site. Do not introduce a third.
+ *
+ *   --bg-dark  #050505 (~Tailwind bg-black)  — moments of emphasis.
+ *     Used at: Hero (top), the Research section's XRD-reveal opener
+ *     (mid-page — chosen deliberately to break up an otherwise long light
+ *     stretch, and because it's already the site's most visually
+ *     significant "moment"), and Contact + Footer (closing). All three
+ *     share the same lattice/crystal motif so the dark sections read as
+ *     one consistent visual language, not unrelated decoration.
+ *
+ *   --bg-light #ffffff (Tailwind bg-white) — everything else: reference-
+ *     or list-like content (About, Research's card/timeline content,
+ *     Publications, Education, Life). Adjacent light sections are told
+ *     apart by layout (cards vs. rows vs. timeline vs. stat grid), not
+ *     by tint — a second light shade was removed for this reason.
+ *
+ *   --accent #059669 (Tailwind emerald-600/700) — the single accent color
+ *     for every section eyebrow, link, and highlight, site-wide. No
+ *     content-category color-coding (previously amber/blue appeared in a
+ *     couple of places with no system behind them).
+ */
+:root {
+  --bg-dark: #050505;
+  --bg-light: #ffffff;
+  --accent: #059669;
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;

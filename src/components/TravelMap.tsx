@@ -16,6 +16,11 @@ const DESTINATIONS = [
   { name: 'France', x: 405, y: 396 },
   { name: 'Spain', x: 393, y: 420 },
   { name: 'China', x: 635, y: 400 },
+  { name: 'Switzerland', x: 423, y: 403 },
+  { name: 'Luxembourg', x: 420, y: 398 },
+  { name: 'Czech Republic', x: 437, y: 399 },
+  { name: 'Hungary', x: 444, y: 403 },
+  { name: 'Poland', x: 457, y: 390 },
 ];
 
 // A gentle arc between two points, rather than a straight line — reads

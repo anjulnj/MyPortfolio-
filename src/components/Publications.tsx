@@ -54,8 +54,7 @@ const presentations = [
     type: 'poster',
     title: 'Influence of low Cs⁺ Fractions on MER and ANA formation in HSIL-based zeolite synthesis',
     venue: 'ALBA Synchrotron, Spain',
-    date: 'Upcoming — 17 March 2026',
-    upcoming: true,
+    date: '17 March 2026',
   },
   {
     type: 'poster',
@@ -79,7 +78,7 @@ const presentations = [
 
 const Publications = () => {
   return (
-    <section id="publications" className="relative bg-white py-24">
+    <section id="publications" className="relative bg-white py-16 md:py-24">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <Reveal className="mb-14 max-w-2xl">
           <p className="text-xs font-semibold uppercase tracking-[0.22em] text-emerald-700">
@@ -137,29 +136,26 @@ const Publications = () => {
           </h3>
         </Reveal>
 
-        <div className="mt-6 grid grid-cols-1 gap-4 md:grid-cols-2">
+        <div className="mt-6 divide-y divide-gray-100 border-t border-gray-100">
           {presentations.map((p, i) => (
-            <Reveal key={p.title + p.date} delay={0.1 + i * 0.05}>
-              <div
-                className={`h-full rounded-2xl border p-6 ${
-                  p.upcoming
-                    ? 'border-blue-100 bg-blue-50/40'
-                    : 'border-emerald-100 bg-emerald-50/40'
-                }`}
-              >
-                <div className="flex items-center gap-2">
+            <Reveal key={p.title + p.date} delay={0.1 + i * 0.04}>
+              <div className="flex flex-col gap-1 py-4 sm:flex-row sm:items-baseline sm:gap-6">
+                <div className="flex flex-shrink-0 items-center gap-2 sm:w-40">
                   {p.type === 'oral' ? (
-                    <Mic size={14} className="text-emerald-700" />
+                    <Mic size={13} className="text-emerald-600" />
                   ) : (
-                    <PresentationIcon size={14} className="text-emerald-700" />
+                    <PresentationIcon size={13} className="text-emerald-600" />
                   )}
-                  <span className="text-xs font-bold uppercase tracking-wider text-emerald-700">
-                    {p.type === 'oral' ? 'Oral Presentation' : p.upcoming ? 'Upcoming Poster' : 'Poster'}
+                  <span className="text-xs font-semibold text-gray-500">
+                    {p.type === 'oral' ? 'Oral' : 'Poster'}
                   </span>
                 </div>
-                <h4 className="mt-2 text-sm font-bold leading-snug text-gray-900">{p.title}</h4>
-                <p className="mt-2 text-xs text-gray-600">{p.venue}</p>
-                <p className="mt-1 text-xs font-medium text-gray-400">{p.date}</p>
+                <div className="flex-1">
+                  <h4 className="text-sm font-bold leading-snug text-gray-900">{p.title}</h4>
+                  <p className="mt-1 text-xs text-gray-500">
+                    {p.venue} · <span className="text-gray-400">{p.date}</span>
+                  </p>
+                </div>
               </div>
             </Reveal>
           ))}

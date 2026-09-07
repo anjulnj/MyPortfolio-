@@ -15,11 +15,18 @@ import {
 } from "react-icons/si";
 
 import Reveal from "./Reveal";
+import LatticeBackground from "./LatticeBackground";
 
 const Contact = () => {
   return (
-    <section id="contact" className="py-24 bg-gray-900 text-white">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="contact" className="relative overflow-hidden py-16 md:py-24 bg-black text-white">
+      {/* Same dark tone + lattice motif as Hero and the Research opener —
+          the three "emphasis" moments read as one visual system. */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_30%,#0f2e26_0%,#050505_60%,#000000_100%)]" />
+      <div className="absolute inset-0 text-emerald-400/[0.1]">
+        <LatticeBackground className="h-full w-full" />
+      </div>
+      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
 
           {/* LEFT SECTION */}
@@ -59,8 +66,8 @@ const Contact = () => {
 
               {/* LOCATION */}
               <div className="flex items-center gap-5">
-                <div className="w-12 h-12 bg-blue-600/10 rounded-xl flex items-center justify-center border border-blue-600/20">
-                  <MdLocationOn className="text-blue-400" size={20} />
+                <div className="w-12 h-12 bg-emerald-600/10 rounded-xl flex items-center justify-center border border-emerald-600/20">
+                  <MdLocationOn className="text-emerald-400" size={20} />
                 </div>
                 <div>
                   <p className="text-xs text-gray-500 uppercase tracking-wider font-semibold">

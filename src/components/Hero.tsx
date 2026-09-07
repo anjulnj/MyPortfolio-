@@ -78,10 +78,10 @@ const Hero = () => {
           className="display-3 mx-auto mt-6 max-w-2xl text-lg font-normal text-white/75 sm:text-xl"
         >
           A <span className="font-medium text-emerald-300">materials scientist</span> and{' '}
-          <span className="font-medium text-emerald-300">engineering physicist</span> researching
-          how temperature guides zeolite growth — with{' '}
-          <span className="font-medium text-emerald-300">4 published papers</span> and beamtime at
-          the ESRF along the way.
+          <span className="font-medium text-emerald-300">engineering physicist</span> studying how
+          temperature guides zeolite growth. So far that's meant{' '}
+          <span className="font-medium text-emerald-300">4 published papers</span> and a fair
+          amount of beamtime at the ESRF.
         </motion.p>
 
         <motion.div

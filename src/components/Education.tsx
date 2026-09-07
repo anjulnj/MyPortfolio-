@@ -1,9 +1,9 @@
-import { GraduationCap, Trophy } from 'lucide-react';
+import { GraduationCap } from 'lucide-react';
 import Reveal from './Reveal';
 
 const education = [
   {
-    year: 'Dec 2025 – Present',
+    year: 'Dec 2024 – Present',
     title: 'PhD, Department of Bioscience Engineering',
     place: 'KU Leuven, Belgium (QS #60, 2026)',
     grade: 'Undergoing',
@@ -32,19 +32,24 @@ const education = [
   },
 ];
 
-const achievements = [
+// The four strongest numeral-anchored results, as a stat grid.
+const stats = [
+  { value: 'Top 0.6%', label: 'IIT-JEE 2016 · 1.2M candidates' },
+  { value: '1/545', label: "Bachelor's Program, 2020" },
+  { value: '4/45', label: 'M.Sc. Physics, 2022' },
+  { value: '1st', label: 'Class X & XII, School' },
+];
+
+// The rest of the record — recognitions without a single clean numeral.
+const otherAchievements = [
   'Selected for HERCULES European School 2026',
   'Predoctoral Scholarship, KU Leuven, 2024',
   'GATE (Graduate Aptitude Test in Engineering) — Physics, 2022',
-  'Ranked 4th among 45 students, M.Sc. Physics, 2022',
-  'Ranked 1st among 545 students, Bachelor’s Program, 2020',
-  'IIT-JEE 2016 — top 0.6% of 1.2 million candidates',
-  'Ranked 1st in School, Class X & XII',
 ];
 
 const Education = () => {
   return (
-    <section id="education" className="relative bg-stone-50 py-24">
+    <section id="education" className="relative bg-white py-16 md:py-24">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <Reveal className="mb-14 max-w-2xl">
           <p className="text-xs font-semibold uppercase tracking-[0.22em] text-emerald-700">
@@ -79,23 +84,29 @@ const Education = () => {
           </div>
         </div>
 
-        <Reveal>
-          <div className="rounded-2xl border border-amber-100 bg-amber-50/50 p-7">
-            <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-amber-100 text-amber-600">
-              <Trophy size={22} />
-            </div>
-            <p className="text-xs font-semibold uppercase tracking-wider text-amber-700">
-              Academic Achievements
-            </p>
-            <div className="mt-3 grid grid-cols-1 gap-3 sm:grid-cols-2">
-              {achievements.map((a) => (
-                <div key={a} className="flex gap-2 text-sm text-gray-700">
-                  <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-amber-400" />
-                  {a}
-                </div>
-              ))}
-            </div>
-          </div>
+        <Reveal className="mt-14">
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-gray-400">
+            Academic Achievements
+          </p>
+        </Reveal>
+
+        {/* Typography carries this section — large numeral, short label,
+            no icon or container competing for attention. */}
+        <div className="mt-6 grid grid-cols-2 gap-x-6 gap-y-8 border-t border-gray-100 pt-8 lg:grid-cols-4">
+          {stats.map((s, i) => (
+            <Reveal key={s.label} delay={i * 0.06}>
+              <p className="display-2 text-4xl font-bold text-gray-900 md:text-5xl">{s.value}</p>
+              <p className="mt-2 text-sm leading-snug text-gray-500">{s.label}</p>
+            </Reveal>
+          ))}
+        </div>
+
+        <Reveal delay={0.1} className="mt-8 flex flex-wrap gap-x-6 gap-y-2 border-t border-gray-100 pt-6">
+          {otherAchievements.map((a) => (
+            <span key={a} className="text-sm text-gray-500">
+              {a}
+            </span>
+          ))}
         </Reveal>
       </div>
     </section>

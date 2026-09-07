@@ -9,7 +9,7 @@ const projects = [
     title: 'Ion Association and Zeolite Growth: How Temperature Guides Porous Framework Formation?',
     place: 'Department of Bioscience Engineering, KU Leuven',
     supervisor: 'Promoter: Prof. Christine Kirschhock · Co-Promoter: Dr. Eric Breynaert',
-    date: 'December 2025 — present',
+    date: 'December 2024 — present',
     desc: 'Investigating how temperature governs ion association and framework formation in zeolite crystallization, using XRD, SEM, ICP-OES, AAS, TGA-DSC, impedance spectroscopy, broadband dielectric spectroscopy, and synchrotron SAXS/WAXS.',
     current: true,
   },
@@ -35,23 +35,28 @@ const projects = [
 
 const visits = [
   {
+    title: 'HERCULES School',
+    place: 'ESRF–ILL, Grenoble, France',
+    date: '22 February – 29 March 2026',
+    desc: 'A five-week European training school on synchrotron and neutron science, covering diffraction, spectroscopy, imaging, and small-angle scattering, including a partner week at the ALBA Synchrotron in Spain.',
+  },
+  {
     title: 'DUBBLE (BM26), ESRF',
     place: 'Grenoble, France',
     date: '15–22 September 2025',
-    desc: 'Upcoming: SAXS/WAXS combined with impedance spectroscopy on mixed-cation zeolites. (Experiment A26-2-1006)',
-    upcoming: true,
+    desc: 'SAXS/WAXS combined with impedance spectroscopy on mixed-cation zeolites. (Experiment A26-2-1006)',
   },
   {
     title: 'Johannes Kepler University Linz',
     place: 'Linz, Austria',
     date: '14–31 August 2025',
-    desc: 'Off-beam conductivity measurements on mixed-cation zeolite synthesis, in preparation for upcoming beam time experiments.',
+    desc: 'Off-beam conductivity measurements on mixed-cation zeolite synthesis, ahead of the DUBBLE beamtime that followed the next month.',
   },
   {
     title: 'Johannes Kepler University Linz',
     place: 'Linz, Austria',
     date: '5–22 May 2025',
-    desc: 'Off-beam conductivity measurements during zeolite crystallization — results published in Chemical Communications (doi:10.1039/D5CC03808A).',
+    desc: 'Off-beam conductivity measurements during zeolite crystallization, with results published in Chemical Communications (doi:10.1039/D5CC03808A).',
   },
   {
     title: 'SNBL (BM01), ESRF',
@@ -78,13 +83,13 @@ const supervision = [
     icon: <GraduationCap size={20} />,
     title: "Master's Thesis Daily Supervision",
     period: 'September 2025 – May 2026 · KU Leuven',
-    desc: 'Daily supervisor for a Master’s student in Bioscience Engineering, working on zeolite crystallization and conductivity measurements — a 30 ECTS capstone requiring 750–900 hours of independent work. (Supervisor: Prof. Christine Kirschhock)',
+    desc: 'Daily supervisor for a Master’s student in Bioscience Engineering, working on zeolite crystallization and conductivity measurements. It’s a 30 ECTS capstone project that runs 750–900 hours of independent work. (Supervisor: Prof. Christine Kirschhock)',
   },
   {
     icon: <Users size={20} />,
     title: 'Bachelor Project Supervision — Begeleid Integrerend Groepswerk',
     period: 'KU Leuven',
-    desc: 'Supervised a Bachelor-level integrative group project on zeolite membrane fabrication and crystallization behavior — guiding experimental planning, literature review, and scientific reporting across a 125-hour, 5-credit module.',
+    desc: 'Supervised a Bachelor-level integrative group project on zeolite membrane fabrication and crystallization behavior, guiding experimental planning, literature review, and scientific reporting across a 125-hour, 5-credit module.',
   },
 ];
 
@@ -92,7 +97,7 @@ const Research = () => {
   return (
     <section id="research" className="relative bg-white">
       <XrdReveal />
-      <div className="py-24">
+      <div className="py-16 md:py-24">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <Reveal className="mb-14 max-w-2xl">
           <p className="text-xs font-semibold uppercase tracking-[0.22em] text-emerald-700">
@@ -102,8 +107,9 @@ const Research = () => {
             Projects &amp; research experience
           </h2>
           <p className="mt-4 text-base leading-7 text-gray-600 md:text-lg">
-            From an ongoing PhD on temperature-guided zeolite growth to thermoelectric materials —
-            the projects that have shaped how I think about structure and synthesis.
+            These are the projects that have shaped how I think about structure and synthesis,
+            from my ongoing PhD on temperature-guided zeolite growth back to the thermoelectric
+            materials work I did during my master's.
           </p>
         </Reveal>
 
@@ -144,28 +150,24 @@ const Research = () => {
           </h3>
         </Reveal>
 
-        <div className="mt-6 grid grid-cols-1 gap-4 md:grid-cols-2">
+        {/* Chronological reference data — a timeline, not repeated cards. */}
+        <div className="mt-6 divide-y divide-gray-100 border-t border-gray-100">
           {visits.map((v, i) => (
-            <Reveal key={v.title + v.date} delay={0.1 + i * 0.05}>
-              <div
-                className={`h-full rounded-2xl border p-6 ${
-                  v.upcoming ? 'border-blue-100 bg-blue-50/40' : 'border-emerald-100 bg-emerald-50/40'
-                }`}
-              >
-                <h4 className="text-base font-bold text-gray-900">{v.title}</h4>
-                <div
-                  className={`mt-2 flex flex-wrap gap-4 text-xs font-medium ${
-                    v.upcoming ? 'text-blue-700' : 'text-emerald-700'
-                  }`}
-                >
-                  <span className="inline-flex items-center gap-1">
-                    <MapPin size={12} /> {v.place}
-                  </span>
-                  <span className="inline-flex items-center gap-1">
-                    <Calendar size={12} /> {v.date}
-                  </span>
+            <Reveal key={v.title + v.date} delay={0.1 + i * 0.04}>
+              <div className="flex flex-col gap-1 py-4 sm:flex-row sm:items-baseline sm:gap-6">
+                <div className="flex flex-shrink-0 items-center gap-2 sm:w-44">
+                  <Calendar size={13} className="text-emerald-600" />
+                  <span className="text-xs font-semibold text-gray-500">{v.date}</span>
                 </div>
-                <p className="mt-3 text-sm leading-6 text-gray-600">{v.desc}</p>
+                <div className="flex-1">
+                  <div className="flex flex-wrap items-baseline gap-x-2">
+                    <h4 className="text-sm font-bold text-gray-900">{v.title}</h4>
+                    <span className="inline-flex items-center gap-1 text-xs text-gray-400">
+                      <MapPin size={11} /> {v.place}
+                    </span>
+                  </div>
+                  <p className="mt-1 text-sm leading-6 text-gray-600">{v.desc}</p>
+                </div>
               </div>
             </Reveal>
           ))}

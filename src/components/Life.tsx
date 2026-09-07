@@ -14,7 +14,7 @@ const Life = () => {
     {
       icon: <Plane size={24} />,
       title: 'Travel & Exploration',
-      desc: 'From Austria and the Netherlands to Spain, France, China, and Germany, traveling recharges my creativity. With 10+ countries explored, every trip brings a fresh perspective and a deeper appreciation for the world.',
+      desc: "I've been lucky enough to travel a fair bit — Austria, the Netherlands, Switzerland, Luxembourg, Czech Republic, Hungary, Poland, Spain, France, Germany, and China so far. Every trip resets my head a little and gives me a different way of looking at things.",
       color: 'text-blue-600',
       bg: 'bg-blue-50',
     },
@@ -49,7 +49,7 @@ const Life = () => {
   ];
 
   return (
-    <section id="life" className="py-24 bg-white">
+    <section id="life" className="py-16 md:py-24 bg-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <Reveal className="max-w-2xl mb-16">
           <span className="text-emerald-700 font-semibold text-sm tracking-widest uppercase">

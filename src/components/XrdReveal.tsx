@@ -208,15 +208,15 @@ const XrdReveal = () => {
   const phases = [
     {
       kicker: 'FAU · Faujasite',
-      body: "This is a real zeolite framework — the same family behind my PhD work. Every atom position here is genuine crystallographic data, not an illustration.",
+      body: "This is a real zeolite framework, the same family behind my PhD work. Every atom position here is genuine crystallographic data, not an illustration.",
     },
     {
       kicker: 'SAXS/WAXS beam sweep',
-      body: 'At facilities like the ESRF, a beam like this reveals how atoms are arranged inside a crystal — the same synchrotron technique I use to study zeolite crystallization in situ.',
+      body: "At facilities like the ESRF, a beam like this shows you how atoms are arranged inside a crystal. It's the same synchrotron technique I use to study zeolite crystallization in situ.",
     },
     {
       kicker: 'Simulated powder XRD',
-      body: 'The result is a diffraction pattern — peak positions and intensities that encode the framework\'s structure, computed here from the same coordinates driving the 3D model above.',
+      body: "What comes out the other end is a diffraction pattern: peak positions and intensities that encode the framework's structure, computed here straight from the same coordinates driving the 3D model above.",
     },
   ];
 
