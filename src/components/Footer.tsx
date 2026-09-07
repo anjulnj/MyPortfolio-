@@ -7,13 +7,18 @@ const Footer = () => {
             © {new Date().getFullYear()} Anjul. Built with curiosity and caffeine ☕
           </p>
           <div className="flex items-center gap-6">
-            {['Home', 'Research', 'Publications', 'Contact'].map((link) => (
+            {[
+              { label: 'Home', href: '#home' },
+              { label: 'Research', href: '#research' },
+              { label: 'Education', href: '#publications' },
+              { label: 'Contact', href: '#contact' },
+            ].map((link) => (
               <a
-                key={link}
-                href={`#${link.toLowerCase()}`}
+                key={link.label}
+                href={link.href}
                 className="text-gray-500 hover:text-emerald-400 text-sm transition-colors"
               >
-                {link}
+                {link.label}
               </a>
             ))}
           </div>

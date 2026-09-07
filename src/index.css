@@ -4,5 +4,35 @@
   html {
     scroll-behavior: smooth;
   }
+
+  body {
+    font: 100%/1.5 -apple-system, "SF Pro Display", "SF Pro Text", system-ui,
+      "Segoe UI", Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Size-specific tracking: tight on large display text, near-zero on body */
+  .display-1 {
+    letter-spacing: -0.03em;
+    line-height: 1.02;
+  }
+  .display-2 {
+    letter-spacing: -0.025em;
+    line-height: 1.06;
+  }
+  .display-3 {
+    letter-spacing: -0.015em;
+    line-height: 1.12;
+  }
 }
 
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

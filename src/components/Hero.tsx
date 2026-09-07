@@ -1,126 +1,124 @@
-import { motion } from 'framer-motion';
-import { BookOpen, MapPin, ArrowDown } from 'lucide-react';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import { useRef } from 'react';
+import { MapPin, ArrowDown, Mail } from 'lucide-react';
 
 const Hero = () => {
+  const sectionRef = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ['start start', 'end start'],
+  });
+
+  // Subtle parallax on the background image and a soft fade on scroll —
+  // driven straight off scroll progress, not a fixed-duration animation.
+  const bgY = useTransform(scrollYProgress, [0, 1], ['0%', '18%']);
+  const contentOpacity = useTransform(scrollYProgress, [0, 0.7], [1, 0]);
+  const contentY = useTransform(scrollYProgress, [0, 1], ['0%', '12%']);
+
   return (
     <section
+      ref={sectionRef}
       id="home"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      className="relative flex min-h-screen items-center justify-center overflow-hidden bg-black"
     >
       {/* Background */}
-      <div
+      <motion.div
         className="absolute inset-0 z-0"
         style={{
+          y: bgY,
           backgroundImage: 'url("/hero-bg.jpg")',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}
       >
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70"></div>
-      </div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/55 to-black/85" />
+      </motion.div>
 
       {/* Content */}
-      <div className="relative z-10 max-w-5xl mx-auto px-4 py-32">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9, ease: 'easeOut' }}
-          className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16"
-        >
-          {/* Profile Image */}
-          <div className="flex-shrink-0">
-            <div className="relative">
-              <div className="w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden border-4 border-white/20 shadow-2xl">
-                <img
-                  src="/profile.jpg"
-                  alt="Anjul"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="absolute -bottom-2 -right-2 bg-emerald-600 text-white px-3 py-1.5 rounded-full text-xs font-bold shadow-lg">
-                PhD Researcher
-              </div>
-            </div>
-          </div>
-
-          {/* Text Content */}
-          <div className="text-center lg:text-left">
-            {/* Location */}
-            <div className="flex items-center justify-center lg:justify-start gap-2 mb-4">
-              <MapPin size={14} className="text-emerald-400" />
-              <span className="text-emerald-300 text-sm font-medium tracking-wide">
-                KU Leuven, Belgium
-              </span>
-            </div>
-
-            {/* Name */}
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 leading-tight">
-              Anjul (<span className="text-emerald-400">Anjul Rais</span>)
-            </h1>
-
-            {/* Short Intro */}
-            <p className="text-lg md:text-xl text-white/70 mb-6 max-w-xl leading-relaxed">
-              A {' '}
-              <span className="text-emerald-400 font-semibold">materials scientist</span> and{' '}
-              <span className="text-emerald-400 font-semibold">engineering physicist</span>, 
-              fascinated by silicates, zeolites, and the strange ways crystals choose their paths,
-               and always chasing the next phase diagram, SAXS curve, or good hike.
-            </p>
-
-            {/* Buttons */}
-            <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start mt-4">
-              <a
-                href="#research"
-                className="px-7 py-3 bg-emerald-600 hover:bg-emerald-700 text-white rounded-full font-semibold transition-all shadow-lg shadow-emerald-600/25"
-              >
-                Explore My Research
-              </a>
-
-              <a
-                href="#life"
-                className="px-7 py-3 bg-white/10 hover:bg-white/20 text-white border border-white/20 rounded-full font-semibold backdrop-blur-sm transition-all"
-              >
-                Beyond Academia
-              </a>
-            </div>
-
-            {/* Academic Links */}
-            <div className="flex items-center justify-center lg:justify-start gap-3 flex-wrap mt-4">
-              <a
-                href="https://orcid.org/YOUR-ORCID"
-                target="_blank"
-                className="bg-white/10 backdrop-blur-sm border border-white/10 px-4 py-2 rounded-full text-emerald-300 text-sm font-medium hover:bg-white/20 transition-all"
-              >
-                ORCID ↗
-              </a>
-
-              <a
-                href="https://scholar.google.com/citations?user=YOUR-SCHOLAR-ID"
-                target="_blank"
-                className="bg-white/10 backdrop-blur-sm border border-white/10 px-4 py-2 rounded-full text-emerald-300 text-sm font-medium hover:bg-white/20 transition-all"
-              >
-                Google Scholar ↗
-              </a>
-
-              <a
-                href="https://www.kuleuven.be/wieiswie/en/person/YOUR-KU-ID"
-                target="_blank"
-                className="bg-white/10 backdrop-blur-sm border border-white/10 px-4 py-2 rounded-full text-emerald-300 text-sm font-medium hover:bg-white/20 transition-all"
-              >
-                KU Leuven Profile ↗
-              </a>
-            </div>
-          </div>
-        </motion.div>
-      </div>
-
-      {/* Scroll Down Arrow */}
-      <a
-        href="#about"
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/40 hover:text-white/70 transition-colors animate-bounce"
+      <motion.div
+        style={{ opacity: contentOpacity, y: contentY }}
+        className="relative z-10 mx-auto max-w-4xl px-6 py-32 text-center"
       >
-        <ArrowDown size={24} />
-      </a>
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ type: 'spring', bounce: 0, duration: 0.8 }}
+          className="mx-auto mb-8 h-28 w-28 overflow-hidden rounded-full border-4 border-white/15 shadow-2xl sm:h-32 sm:w-32"
+        >
+          <img src="/profile.jpg" alt="Anjul" className="h-full w-full object-cover" />
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 14 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ type: 'spring', bounce: 0, duration: 0.7, delay: 0.1 }}
+          className="mb-5 flex items-center justify-center gap-2"
+        >
+          <MapPin size={13} className="text-emerald-400" />
+          <span className="text-xs font-medium uppercase tracking-[0.2em] text-emerald-300">
+            Leuven, Belgium
+          </span>
+        </motion.div>
+
+        <motion.h1
+          initial={{ opacity: 0, y: 22 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ type: 'spring', bounce: 0, duration: 0.8, delay: 0.18 }}
+          className="display-1 text-5xl font-semibold text-white sm:text-6xl md:text-7xl"
+        >
+          Anjul
+        </motion.h1>
+
+        <motion.p
+          initial={{ opacity: 0, y: 18 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ type: 'spring', bounce: 0, duration: 0.8, delay: 0.3 }}
+          className="display-3 mx-auto mt-6 max-w-2xl text-lg font-normal text-white/75 sm:text-xl"
+        >
+          A <span className="font-medium text-emerald-300">materials scientist</span> and{' '}
+          <span className="font-medium text-emerald-300">engineering physicist</span> working on
+          silicates, porous materials, and zeolites — chasing how disorder becomes structure, one
+          synthesis at a time.
+        </motion.p>
+
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ type: 'spring', bounce: 0, duration: 0.7, delay: 0.42 }}
+          className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row"
+        >
+          <a
+            href="#research"
+            className="rounded-full bg-emerald-500 px-7 py-3 text-sm font-semibold text-black shadow-lg shadow-emerald-500/20 transition-transform duration-200 hover:-translate-y-0.5 active:scale-[0.97]"
+          >
+            Explore My Research
+          </a>
+          <a
+            href="#contact"
+            className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-7 py-3 text-sm font-semibold text-white backdrop-blur-md transition-transform duration-200 hover:-translate-y-0.5 hover:bg-white/10 active:scale-[0.97]"
+          >
+            <Mail size={15} />
+            Get in Touch
+          </a>
+        </motion.div>
+      </motion.div>
+
+      {/* Scroll cue */}
+      <motion.a
+        href="#about"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1, duration: 0.6 }}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/40 transition-colors hover:text-white/70"
+      >
+        <motion.span
+          animate={{ y: [0, 6, 0] }}
+          transition={{ repeat: Infinity, duration: 1.6, ease: 'easeInOut' }}
+          className="block"
+        >
+          <ArrowDown size={22} />
+        </motion.span>
+      </motion.a>
     </section>
   );
 };

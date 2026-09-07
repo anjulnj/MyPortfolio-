@@ -1,7 +1,6 @@
 import {
   MdEmail,
   MdLocationOn,
-  MdCalendarToday,
   MdSend
 } from "react-icons/md";
 
@@ -15,6 +14,8 @@ import {
   SiOrcid
 } from "react-icons/si";
 
+import Reveal from "./Reveal";
+
 const Contact = () => {
   return (
     <section id="contact" className="py-24 bg-gray-900 text-white">
@@ -22,12 +23,12 @@ const Contact = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
 
           {/* LEFT SECTION */}
-          <div>
+          <Reveal>
             <span className="text-emerald-400 font-semibold text-sm tracking-widest uppercase">
               Get in Touch
             </span>
 
-            <h2 className="text-3xl md:text-4xl font-bold mt-3 mb-6 leading-tight">
+            <h2 className="display-2 text-3xl md:text-4xl font-semibold mt-3 mb-6">
               Let's collaborate on something{" "}
               <span className="text-emerald-400">meaningful</span>
             </h2>
@@ -49,7 +50,7 @@ const Contact = () => {
                   <p className="text-xs text-gray-500 uppercase tracking-wider font-semibold">
                     Email
                   </p>
-                  <p className="text-white font-medium">anjul@kuleuven.be</p>
+                  <p className="text-white font-medium">anjul@student.kuleuven.be</p>
                   <p className="text-gray-400 text-sm">
                     Personal: anjul8477@gmail.com
                   </p>
@@ -66,22 +67,7 @@ const Contact = () => {
                     Location
                   </p>
                   <p className="text-white font-medium">
-                    COK-KAT, KU Leuven, Belgium
-                  </p>
-                </div>
-              </div>
-
-              {/* EMAIL HOURS */}
-              <div className="flex items-center gap-5">
-                <div className="w-12 h-12 bg-purple-600/10 rounded-xl flex items-center justify-center border border-purple-600/20">
-                  <MdCalendarToday className="text-purple-400" size={20} />
-                </div>
-                <div>
-                  <p className="text-xs text-gray-500 uppercase tracking-wider font-semibold">
-                    Email Hours
-                  </p>
-                  <p className="text-white font-medium">
-                    Tuesdays & Thursdays, 6–8 PM
+                    Belgium
                   </p>
                 </div>
               </div>
@@ -155,10 +141,10 @@ const Contact = () => {
                 </a>
               </div>
             </div>
-          </div>
+          </Reveal>
 
           {/* RIGHT SECTION */}
-          <div className="bg-white/5 p-8 md:p-10 rounded-3xl border border-white/10 backdrop-blur-sm">
+          <Reveal delay={0.1} className="bg-white/5 p-8 md:p-10 rounded-3xl border border-white/10 backdrop-blur-sm">
             <h3 className="text-xl font-bold mb-6">Send me a message</h3>
 
             <form className="space-y-5" onSubmit={(e) => e.preventDefault()}>
@@ -194,7 +180,7 @@ const Contact = () => {
                 <MdSend size={18} />
               </button>
             </form>
-          </div>
+          </Reveal>
 
         </div>
       </div>

@@ -1,4 +1,5 @@
 import { Dumbbell, Plane, BookOpen, Coffee, Mountain, Music } from 'lucide-react';
+import Reveal from './Reveal';
 
 const Life = () => {
   const interests = [
@@ -49,26 +50,23 @@ const Life = () => {
   return (
     <section id="life" className="py-24 bg-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-
-        {/* Section Header */}
-        <div className="max-w-2xl mb-16">
+        <Reveal className="max-w-2xl mb-16">
           <span className="text-emerald-700 font-semibold text-sm tracking-widest uppercase">
             Beyond Academia
           </span>
 
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-3 mb-6 leading-tight">
+          <h2 className="display-2 text-3xl md:text-4xl font-semibold text-gray-900 mt-3 mb-6">
             There's more to life than <span className="text-emerald-700">p-values</span>
           </h2>
 
           <p className="text-gray-600 text-lg leading-relaxed">
-            I believe that a well‑rounded life makes you a better researcher.  
+            I believe that a well‑rounded life makes you a better researcher.
             These are the passions that fuel me outside the lab and keep me grounded.
           </p>
-        </div>
+        </Reveal>
 
-        {/* Photo Banner */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-16">
-          <div className="relative h-72 rounded-2xl overflow-hidden group">
+          <Reveal className="relative h-72 rounded-2xl overflow-hidden group">
             <img
               src="/gym.jpg"
               alt="Gym and Fitness"
@@ -80,9 +78,9 @@ const Life = () => {
                 <p className="text-white/70 text-sm">Strength training, the best way to end the day</p>
               </div>
             </div>
-          </div>
+          </Reveal>
 
-          <div className="relative h-72 rounded-2xl overflow-hidden group">
+          <Reveal delay={0.08} className="relative h-72 rounded-2xl overflow-hidden group">
             <img
               src="/travel.jpg"
               alt="Travel Adventures"
@@ -94,35 +92,32 @@ const Life = () => {
                 <p className="text-white/70 text-sm">Exploring new places, one trip at a time</p>
               </div>
             </div>
-          </div>
+          </Reveal>
         </div>
 
-        {/* Interest Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {interests.map((item, i) => (
-            <div
-              key={i}
-              className="p-6 rounded-2xl border border-gray-100 hover:border-gray-200 hover:shadow-md transition-all duration-300 bg-white group"
-            >
-              <div
-                className={`w-12 h-12 rounded-xl ${item.bg} flex items-center justify-center mb-4 ${item.color} group-hover:scale-110 transition-transform`}
-              >
-                {item.icon}
-              </div>
+            <Reveal key={item.title} delay={i * 0.05}>
+              <div className="p-6 h-full rounded-2xl border border-gray-100 hover:border-gray-200 hover:shadow-md transition-all duration-300 bg-white group hover:-translate-y-1">
+                <div
+                  className={`w-12 h-12 rounded-xl ${item.bg} flex items-center justify-center mb-4 ${item.color} group-hover:scale-110 transition-transform`}
+                >
+                  {item.icon}
+                </div>
 
-              <h3 className="text-lg font-bold text-gray-900 mb-2">{item.title}</h3>
-              <p className="text-gray-600 text-sm leading-relaxed">{item.desc}</p>
-            </div>
+                <h3 className="text-lg font-bold text-gray-900 mb-2">{item.title}</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">{item.desc}</p>
+              </div>
+            </Reveal>
           ))}
         </div>
 
-        {/* Quote */}
-        <div className="mt-16 text-center">
+        <Reveal className="mt-16 text-center">
           <blockquote className="text-2xl md:text-3xl font-serif italic text-gray-400 max-w-3xl mx-auto leading-relaxed">
-            "You must be the change you wish to see in the world.
+            "You must be the change you wish to see in the world."
           </blockquote>
           <p className="text-gray-400 mt-4 text-sm font-medium">— Mahatma Gandhi</p>
-        </div>
+        </Reveal>
       </div>
     </section>
   );
